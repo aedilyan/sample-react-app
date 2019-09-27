@@ -32,6 +32,3 @@ App can be run locally on your machine, or pushed to cloud
 
     npm run coverage
 
-## Prettier - Code formatter
-
-    https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
