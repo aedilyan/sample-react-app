@@ -1,4 +1,4 @@
-# Rexpack
+# simple-react-app
 
 This is a ReactJS example projects with minimal Express, Webpack app that serves an image, adds some styling and some basic functionality. This project can then be used as a template for other more complex apps.
 
