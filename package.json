@@ -29,8 +29,9 @@
     "node": ">=4.3.2"
   },
   "jest": {
+    "testEnvironment": "node",
     "moduleNameMapper": {
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js",
+      "\\.(css|less)$": "identity-obj-proxy",
       "\\.(gif|ttf|eot|svg)$": "<rootDir>/__mocks__/fileMock.js"
     }
   },
@@ -54,7 +55,10 @@
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^24.1.0",
+    "jest-pnp-resolver": "^1.2.1",
+    "jest-resolve": "^24.9.0",
     "mini-css-extract-plugin": "^0.4.5",
     "open": "^6.4.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
