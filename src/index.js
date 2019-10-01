@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./app/App";
-import "./assets/css/style.css";
+import { BrowserRouter } from 'react-router-dom';
+import Routes from './app/Routes'
+import authService from './app/services/authService'
+import "./assets/css/style.css"
+
+authService.init();
+
+const Index = (
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>
+);
 
 ReactDOM.render(
-  <App />,
+  Index,
   document.getElementById("react-container") // eslint-disable-line no-undef
 );
 

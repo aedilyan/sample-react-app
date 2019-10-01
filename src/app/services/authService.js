@@ -23,23 +23,23 @@ class authService {
 
     setSession = access_token => {
         if (access_token) {
-            localStorage.setItem('jwt_access_token', access_token);
+            localStorage.setItem('jwt_access_token', access_token);  // eslint-disable-line no-undef
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + access_token;
         }
         else {
-            localStorage.removeItem('jwt_access_token');
+            localStorage.removeItem('jwt_access_token');  // eslint-disable-line no-undef
             delete axios.defaults.headers.common['Authorization'];
         }
     };
 
     getAccessToken = () => {
-        return window.localStorage.getItem('jwt_access_token');
+        return localStorage.getItem('jwt_access_token');  // eslint-disable-line no-undef
     };
 
     init() {
         this.setInterceptors();
         this.handleAuthentication();
-    };
+    }
 }
 
 export default new authService();
