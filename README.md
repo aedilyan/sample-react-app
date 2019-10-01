@@ -4,7 +4,7 @@ This is a ReactJS example projects with minimal Express, Webpack app that serves
 
 Stack: Node (ES6+), Express, Webpack, React, Jest, and Enzyme that has Hot Module Reloading and can be deployed to Google App Engine with a single command. It has dev and prod builds, where the prod build outputs a minified, uglified bundle where images are encoded in Base64 directly into the css file.
 
-- jest is an open-source testing framework that has become increasingly popular recently. Developed by Facebook.
+used jest as JS testing framework - Rated as the number one JavaScript automation testing framework in 2018 by the stateofjs survey, Jest was developed by Facebook and used to test JavaScript codes, especially applications developed using React JS.
 
 App can be run locally on your machine, or pushed to cloud
 
