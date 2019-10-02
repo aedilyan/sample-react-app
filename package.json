@@ -1,7 +1,7 @@
 {
   "name": "simple-react-app",
   "version": "1.0.0",
-  "description": "Simple React app - with ES6+ babel transpilation, ESLint linting, Hot Module Reloading, and Webpack bundled, and Jest test framework enabled.",
+  "description": "Simple React app - with ES6+ babel transpilation, ESLint linting, Hot Module Reloading, Webpack bundling, and testing with Jest framework.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -49,6 +49,7 @@
     "eslint": "^5.14.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-react": "^7.12.1",
+    "eslint-plugin-react-hooks": "^2.1.1",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
