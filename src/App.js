@@ -3,12 +3,13 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './app/Routes'
 import authService from './app/services/authService'
-import "./assets/css/style.css"
 import Header from './app/header/Header'
+
+import "./assets/css/style.css"
 
 authService.init();
 
-const Index = (
+const App = (
   <BrowserRouter>
     <Header />
     <Routes />
@@ -16,7 +17,7 @@ const Index = (
 );
 
 ReactDOM.render(
-  Index,
+  App,
   document.getElementById("react-container") // eslint-disable-line no-undef
 );
 
