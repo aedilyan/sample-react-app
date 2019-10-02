@@ -4,11 +4,13 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './app/Routes'
 import authService from './app/services/authService'
 import "./assets/css/style.css"
+import Header from './app/header/Header'
 
 authService.init();
 
 const Index = (
   <BrowserRouter>
+    <Header />
     <Routes />
   </BrowserRouter>
 );
