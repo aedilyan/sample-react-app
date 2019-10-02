@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import { getUser } from '../services/userService'
 import Heading from '../common/heading/Heading'
 import Avatar from '../common/avatar/Avatar'
 import Button from '../common/button/Button'
 import UserModel from '../user/UserModel'
 
-const config = {
-    api: 'https://reqres.in/api/users?page=1'
-}
+
 
 const HomePage = ({ history }) => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get(config.api).then(function (response) {
+        getUser.then(function (response) {
             // handle success
             setUsers(response.data.data.map(user => {
                 return new UserModel(user);
@@ -36,6 +34,7 @@ const HomePage = ({ history }) => {
                 </div>
             ))}
             {users.length === 0 && <div>Loading...</div>}
+
         </div>
     );
 };

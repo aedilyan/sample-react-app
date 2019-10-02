@@ -17,8 +17,6 @@ module.exports = {
   },
   target: "web",
   devtool: "#source-map",
-  // Webpack 4 does not have a CSS minifier, although
-  // Webpack 5 will likely come with one
   optimization: {
     minimizer: [
       new UglifyJsPlugin({

@@ -10,10 +10,12 @@ import "./assets/css/style.css"
 authService.init();
 
 const App = (
-  <BrowserRouter>
-    <Header />
-    <Routes />
-  </BrowserRouter>
+  <React.StrictMode>
+    <BrowserRouter>
+      <Header />
+      <Routes />
+    </BrowserRouter>
+  </React.StrictMode>
 );
 
 ReactDOM.render(
