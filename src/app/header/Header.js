@@ -1,8 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import useLocalStorage from '../common/hooks/useLocalStorage'
 import './header.css'
 
 const Header = () => {
+
+    const [name, setName] = useLocalStorage('name', 'Bob');
+
     return (
         <div className="nav">
             <div className="nav-header">
@@ -21,6 +25,12 @@ const Header = () => {
             <div className="nav-links">
                 <Link to="/">Home</Link>
                 <Link to="/about">About</Link>
+                <input
+                    type="text"
+                    placeholder="Enter your name"
+                    value={name}
+                    onChange={e => setName(e.target.value)}
+                />
             </div>
         </div>
     );
