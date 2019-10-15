@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import Routes from './app/Routes'
 import authService from './app/services/authService'
 import Header from './app/header/Header'
+import ErrorBoundary from './app/common/ErrorBoundary'
 
 import "./assets/css/style.css"
 
@@ -11,10 +12,12 @@ authService.init();
 
 const App = (
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Routes />
-    </BrowserRouter>
+    <ErrorBoundary>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+      </BrowserRouter>
+    </ErrorBoundary>
   </React.StrictMode>
 );
 
