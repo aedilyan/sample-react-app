@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorLoggingSvc from '../services/errorLoggingService';
+import ErrorLoggingSvc from '../api/errorLoggingService';
 
 class ErrorBoundary extends React.Component {
     constructor(props) {

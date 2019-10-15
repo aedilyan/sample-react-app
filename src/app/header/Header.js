@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import useLocalStorage from '../common/hooks/useLocalStorage'
+import useLocalStorage from '../components/hooks/useLocalStorage'
 import './header.css'
 
 const Header = () => {

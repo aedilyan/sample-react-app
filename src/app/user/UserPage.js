@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Avatar from '../common/avatar/Avatar'
+import Avatar from '../components/avatar/Avatar'
 
 const UserPage = ({history}) => {
     

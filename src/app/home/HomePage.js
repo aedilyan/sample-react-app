@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import { getUser } from '../services/userService'
-import Heading from '../common/heading/Heading'
-import Avatar from '../common/avatar/Avatar'
-import Button from '../common/button/Button'
+import { getUser } from '../api/userService'
+import Heading from '../components/heading/Heading'
+import Avatar from '../components/avatar/Avatar'
+import Button from '../components/button/Button'
 import UserModel from '../user/UserModel'
-
-
 
 const HomePage = ({ history }) => {
     const [users, setUsers] = useState([]);
