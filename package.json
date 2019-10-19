@@ -20,6 +20,7 @@
   "author": "Artur Edilyan",
   "license": "MIT",
   "dependencies": {
+    "@babel/runtime": "^7.6.3",
     "acorn": "^7.1.0",
     "axios": "^0.19.0",
     "express": "^4.16.4",
@@ -36,6 +37,7 @@
     "@babel/core": "^7.6.2",
     "@babel/node": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",

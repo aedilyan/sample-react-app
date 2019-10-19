@@ -3,6 +3,7 @@ import { getUser } from '../api/userService'
 import Heading from '../components/heading/Heading'
 import Avatar from '../components/avatar/Avatar'
 import Button from '../components/button/Button'
+import { HeartButton } from '../components/HeartButton/HeartButton'
 import UserModel from '../user/UserModel'
 import { userReducer } from '../reducers/userReducer'
 import userAction from '../actions/userAction';
@@ -25,8 +26,8 @@ const HomePage = ({ history }) => {
         history.push(`/user/${user.id}`, { user });
     }
 
-    const handleMakeFavorite = (user) => {
-        dispatch({ type: userAction.favorite, userId: user.id })
+    const handleMakeFavorite = (favorite, userId) => {
+        dispatch({ type: favorite ? userAction.unFavorite : userAction.favorite, userId: userId })
     }
 
     return (
@@ -37,7 +38,7 @@ const HomePage = ({ history }) => {
                 <div key={user.id}>
                     <Avatar name={user.name} imageSrc={user.avatar} favorite={user.favorite} />
                     <Button onClick={() => goProfile(user)} className="btn-small" text="Go my profile" />
-                    <Button onClick={() => handleMakeFavorite(user)} className="btn-small" text={user.favorite ? 'favorite' : 'make favorite'} />
+                    <HeartButton userId={user.id} onClick={handleMakeFavorite} />
                 </div>
             ))}
             {users.length === 0 && <div>Loading...</div>}

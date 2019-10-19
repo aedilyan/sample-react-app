@@ -1,6 +1,19 @@
-.btn-small{
+.btn-small {
     display: block;
-    width: 150px;
+    max-width: 150px;
     margin: 0 auto;
     margin-top: 20px;
+    color: #20bf6b !important;
+    text-transform: uppercase;
+    background: #ffffff;
+    border: 1px solid #20bf6b !important;
+    border-radius: 1px;
+    transition: all 0.3s ease 0s;
+}
+
+.btn-small:hover {
+    color: #494949 !important;
+    border-radius: 50px;
+    border-color: #494949 !important;
+    transition: all 0.3s ease 0s;
 }

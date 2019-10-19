@@ -1,0 +1,11 @@
+.heart-true {
+    color: red;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .heart-false {
+    color: #cccccc;
+    font-size: 22px;
+    cursor: pointer;
+  }

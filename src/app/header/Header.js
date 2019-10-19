@@ -11,7 +11,7 @@ const Header = () => {
         <div className="nav">
             <div className="nav-header">
                 <div className="nav-title">
-                    React app
+                    React app 
                   </div>
             </div>
             <div className="nav-btn">
