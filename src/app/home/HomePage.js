@@ -1,13 +1,15 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useContext } from 'react'
 import Heading from '../components/heading/Heading'
 import Avatar from '../components/avatar/Avatar'
 import Button from '../components/button/Button'
 import { HeartButton } from '../components/HeartButton/HeartButton'
 import useAxiosFetch from '../hooks/useAxiosFetch'
+import { UserContext } from '../../App'
 
 const HomePage = ({ history }) => {
 
     const { data, isLoading, updateDataRecord } = useAxiosFetch("https://reqres.in/api/users?page=1", []);
+    const [authUser] = useContext(UserContext);
 
     const goProfile = (user) => {
         history.push(`/user/${user.id}`, { user });
@@ -29,6 +31,7 @@ const HomePage = ({ history }) => {
     return (
         <div className="container">
             <Heading message="awesome users list" />
+            <p>{authUser.email}</p>
 
             {data.map((user) => (
                 <div key={user.id}>

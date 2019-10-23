@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import useLocalStorage from '../hooks/useLocalStorage'
+//import useLocalStorage from '../hooks/useLocalStorage'
+import { UserContext } from '../../App'
 import './header.css'
 
 const Header = () => {
 
-    const [name, setName] = useLocalStorage('name', 'Bob');
+    //const [name, setName] = useLocalStorage('name', 'Bob');
+    const [authUser, setAuthUser] = useContext(UserContext);
 
     return (
         <div className="nav">
             <div className="nav-header">
                 <div className="nav-title">
-                    React app 
-                  </div>
+                    React app
+                </div>
             </div>
             <div className="nav-btn">
                 <label htmlFor="nav-check">
@@ -28,8 +30,8 @@ const Header = () => {
                 <input
                     type="text"
                     placeholder="Enter your name"
-                    value={name}
-                    onChange={e => setName(e.target.value)}
+                    value={authUser.email}
+                    onChange={e => setAuthUser({ ...authUser, email: e.target.value })}
                 />
             </div>
         </div>
