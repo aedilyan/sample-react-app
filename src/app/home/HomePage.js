@@ -1,47 +1,43 @@
-import React, { useEffect, useReducer } from 'react'
-import { getUser } from '../api/userService'
+import React, { useCallback } from 'react'
 import Heading from '../components/heading/Heading'
 import Avatar from '../components/avatar/Avatar'
 import Button from '../components/button/Button'
 import { HeartButton } from '../components/HeartButton/HeartButton'
-import UserModel from '../user/UserModel'
-import { userReducer } from '../reducers/userReducer'
-import userAction from '../actions/userAction';
+import useAxiosFetch from '../hooks/useAxiosFetch'
 
 const HomePage = ({ history }) => {
 
-    const [users, dispatch] = useReducer(userReducer, []);
-
-    useEffect(() => {
-        getUser.then(function (response) {
-            // handle success
-            const users = response.data.data.map(user => {
-                return new UserModel(user);
-            })
-            dispatch({ type: userAction.setUser, data: users })
-        })
-    }, []);
+    const { data, isLoading, updateDataRecord } = useAxiosFetch("https://reqres.in/api/users?page=1", []);
 
     const goProfile = (user) => {
         history.push(`/user/${user.id}`, { user });
     }
 
-    const handleMakeFavorite = (favorite, userId) => {
-        dispatch({ type: favorite ? userAction.unFavorite : userAction.favorite, userId: userId })
+    const handleMakeFavorite = useCallback((user) => {
+
+        const toggledRec = { ...user, favorite: !user.favorite };
+
+        //Do api call then update the record
+        updateDataRecord(toggledRec);
+
+    }, [updateDataRecord]);
+
+    if (isLoading) {
+        return <div>Loading...</div>
     }
 
     return (
         <div className="container">
             <Heading message="awesome users list" />
 
-            {users.map((user) => (
+            {data.map((user) => (
                 <div key={user.id}>
-                    <Avatar name={user.name} imageSrc={user.avatar} favorite={user.favorite} />
+                    <Avatar name={`${user.first_name} ${user.last_name}`} imageSrc={user.avatar} favorite={user.favorite} />
                     <Button onClick={() => goProfile(user)} className="btn-small" text="Go my profile" />
-                    <HeartButton userId={user.id} onClick={handleMakeFavorite} />
+                    <HeartButton userId={user.id} onClick={() => handleMakeFavorite(user)} />
                 </div>
             ))}
-            {users.length === 0 && <div>Loading...</div>}
+            {data.length === 0 && <div>Loading...</div>}
 
         </div>
     );
