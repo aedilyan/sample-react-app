@@ -7,7 +7,7 @@ import './header.css'
 const Header = () => {
 
     //const [name, setName] = useLocalStorage('name', 'Bob');
-    const [authUser, setAuthUser] = useContext(UserContext);
+    const [authUser, setAuthUser] = Array.isArray(useContext(UserContext)) ? useContext(UserContext) : [{}, function () { }]; // eslint-disable-line react-hooks/rules-of-hooks
 
     return (
         <div className="nav">
