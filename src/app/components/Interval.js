@@ -1,5 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import Button from './button/Button'
+import console from '../utils/console';
 
 const _window = window; // eslint-disable-line no-undef
 
@@ -13,8 +14,12 @@ const Counter = () => {
 
         return () => {
             _window.clearInterval(intervalId);
-            _window.console.log('%c Counter component is unmounting', 'background: #222; color: #bada55');
+            console.log('Counter component is unmounting', '#bada55');
         }
+    }, []);
+
+    useEffect(() => {
+        console.log('Counter component is mounting', '#0ada00');
     }, []);
 
     function handleAlertClick() {

@@ -1,17 +1,15 @@
-import React, { useCallback, useContext, useState, lazy } from 'react'
+import React, { useCallback, useContext } from 'react'
 import Heading from '../components/heading/Heading'
 import Avatar from '../components/avatar/Avatar'
 import Button from '../components/button/Button'
 import { HeartButton } from '../components/HeartButton/HeartButton'
 import useAxiosFetch from '../hooks/useAxiosFetch'
 import { UserContext } from '../../App'
-const Counter = lazy(() => import('../components/Counter'));
 
 const HomePage = ({ history }) => {
 
     const { data, isLoading, updateDataRecord } = useAxiosFetch("https://reqres.in/api/users?page=1", []);
     const [authUser] = useContext(UserContext);
-    const [isCounting, setIsCounting] = useState(false);
 
     const goProfile = (user) => {
         history.push(`/user/${user.id}`, { user });
@@ -33,9 +31,6 @@ const HomePage = ({ history }) => {
     return (
         <div className="container">
             <Heading message={`here are [${authUser.email}]'s followers`} />
-            <hr></hr>
-            <Button onClick={() => setIsCounting(counting => !counting)}>Start/Stop counting</Button>
-            {isCounting && <Counter />}
             <hr></hr>
 
             {data.map((user) => (
