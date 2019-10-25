@@ -25,7 +25,7 @@ const dataFetchReducer = (state, action) => {
 };
 
 const useAxiosFetch = (initialUrl, initialData) => {
-    const [url] = useState(initialUrl);
+    const [url, setUrl] = useState(initialUrl);
     const [state, dispatch] = useReducer(dataFetchReducer, {
         isLoading: false,
         hasError: false,
@@ -40,7 +40,7 @@ const useAxiosFetch = (initialUrl, initialData) => {
             dispatch({ type: "FETCH_INIT" });
 
             try {
-                let result = await axios.get(url);
+                let result = url ? await axios.get(url) : [];
                 if (!didCancel) {
                     dispatch({ type: "FETCH_SUCCESS", payload: result.data.data });
                 }
@@ -65,7 +65,7 @@ const useAxiosFetch = (initialUrl, initialData) => {
         });
     };
 
-    return { ...state, updateDataRecord };
+    return { ...state, doFetch: setUrl, updateDataRecord };
 }
 
 export default useAxiosFetch;

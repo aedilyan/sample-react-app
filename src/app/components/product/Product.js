@@ -1,11 +1,11 @@
 import React, { useEffect, useCallback } from 'react'
-import console from '../../utils/console'
+import { console } from '../../utils'
 
 
 const EffectHook = ({ productId }) => {
 
     const getProduct = useCallback(() => {
-        console.log(productId);
+        console.log(`ProductId: ${productId}`);
     }, [productId]);
 
 
