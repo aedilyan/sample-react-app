@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
-import Routes from './app/Routes'
-import authService from './app/api/authService'
-import Header from './app/header/Header'
-import ErrorBoundary from './app/components/ErrorBoundary'
+import Routes from './Routes'
+import authService from './api/authService'
+import Header from './components/header/Header'
+import ErrorBoundary from './components/common/ErrorBoundary'
 import "./assets/css/style.css"
 
 authService.init();
