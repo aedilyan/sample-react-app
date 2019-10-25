@@ -8,7 +8,7 @@
     "coverage": "jest --coverage",
     "build:dev": "rimraf dist && webpack --mode development --config webpack.dev.config.js",
     "build:prod": "rimraf dist && webpack --mode production --config webpack.prod.config.js",
-    "server": "babel-node ./src/server/server-dev.js",
+    "server": "babel-node ./server/server-dev.js",
     "start": "npm-run-all server --env.mode=development"
   },
   "repository": "https://github.com/aedilyan/simple-react-app",

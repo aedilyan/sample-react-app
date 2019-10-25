@@ -6,18 +6,17 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     main: [
-      "webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000",
       "./src/App.js"
     ]
   },
   output: {
     path: path.join(__dirname, "dist"),
-    publicPath: "/",
+    publicPath: "/js",
     filename: "[name].js"
   },
   mode: "development",
   target: "web",
-  devtool: "#source-map",
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
@@ -58,11 +57,11 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebPackPlugin({
-      template: "./public/index.html",
-      filename: "./index.html",
-      excludeChunks: ["server"]
-    }),
+    // new HtmlWebPackPlugin({
+    //   template: "./public/index.html",
+    //   filename: "./index.html",
+    //   excludeChunks: ["server"]
+    // }),
     new CopyWebpackPlugin([{ from: "public" }]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
