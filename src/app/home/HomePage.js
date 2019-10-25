@@ -2,7 +2,7 @@ import React, { useCallback, useContext } from 'react'
 import Heading from '../components/heading/Heading'
 import Avatar from '../components/avatar/Avatar'
 import Button from '../components/button/Button'
-import { HeartButton } from '../components/HeartButton/HeartButton'
+import { HeartButton } from '../components/heartButton/HeartButton'
 import useAxiosFetch from '../hooks/useAxiosFetch'
 import { UserContext } from '../../App'
 
