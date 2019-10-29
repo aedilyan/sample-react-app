@@ -16,8 +16,8 @@ const LoginForm = () => {
 
     return (
         <form onSubmit={handleSubmit} className="form-group">
-            <Input type="text" name="name" {...bindUserName} />
-            <Input type="password" name="password" {...bindPassword} />
+            <Input type="text" name="name" placeholder="Enter username" {...bindUserName} />
+            <Input type="password" name="password" placeholder="Enter password" {...bindPassword} />
             <Input type="submit" value="Submit" />
         </form>
     );

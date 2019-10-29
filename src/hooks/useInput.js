@@ -1,7 +1,14 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
+
+//const functionsCounter = new Set() // eslint-disable-line no-undef
+//functionsCounter.add(handleOnChange)
 
 const useInput = initialValue => {
     const [value, setValue] = useState(initialValue);
+
+    const handleOnChange = useCallback(event => {
+        setValue(event.target.value);
+    }, [setValue])
 
     return {
         value,
@@ -9,9 +16,7 @@ const useInput = initialValue => {
         reset: () => setValue(""),
         bind: {
             value,
-            onChange: event => {
-                setValue(event.target.value);
-            }
+            onChange: handleOnChange
         }
     };
 };

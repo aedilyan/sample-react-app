@@ -20,3 +20,7 @@
   input[type=submit]:hover{
     opacity: 0.8;
   }
+
+  .error{
+      color: red;
+  }
