@@ -10,6 +10,13 @@ p {
 
 .container {
   margin: 0 auto;
-  width: 300px;
+  width: 500px;
   text-align: center;
+}
+hr{
+  margin: 30px;
+}
+.form-group {
+  border: 3px solid #f1f1f1;
+  padding: 15px;
 }

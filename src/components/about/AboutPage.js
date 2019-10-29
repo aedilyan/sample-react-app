@@ -4,6 +4,7 @@ import useWindowWidth from "../../hooks/useWindowWidth"
 const Interval = lazy(() => import('../common/Interval'));
 const Product = lazy(() => import('../common/product/Product'));
 const Counter = lazy(() => import('../common/counter/Counter'));
+const LoginForm = lazy(() => import('./LoginForm'));
 
 
 const About = () => {
@@ -27,6 +28,10 @@ const About = () => {
             <hr></hr>
 
             <p>Window width is {width}</p>
+            <hr></hr>
+
+            <h4>Enter username and password to Login</h4>
+            <LoginForm />
         </div>
     );
 };
