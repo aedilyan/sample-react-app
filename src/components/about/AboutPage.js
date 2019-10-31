@@ -14,7 +14,7 @@ const About = () => {
 
 
     return (
-        <div className="container">
+        <div className="page-container main">
             <hr></hr>
             <Button onClick={() => setIsCounting(counting => !counting)}>Start/Stop counting</Button>
             {isCounting && <Interval />}

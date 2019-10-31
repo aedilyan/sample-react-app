@@ -10,7 +10,7 @@ const Header = () => {
     const [authUser, setAuthUser] = Array.isArray(useContext(UserContext)) ? useContext(UserContext) : [{}, function () { }]; // eslint-disable-line react-hooks/rules-of-hooks
 
     return (
-        <div className="nav">
+        <div className="nav header">
             <div className="nav-header">
                 <div className="nav-title">
                     React app

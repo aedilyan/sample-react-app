@@ -12,8 +12,10 @@ const UserPage = () => {
 
     return (
         <Fragment>
-            <Avatar name={`${userId}:${user.email}`} imageSrc={user.avatar} />
-            <Button onClick={() => history.goBack()} className="btn-small">Go Back</Button>
+            <div className="page-container main">
+                <Avatar name={`${userId}:${user.email}`} imageSrc={user.avatar} />
+                <Button onClick={() => history.goBack()} className="btn-small">Go Back</Button>
+            </div>
         </Fragment>
     );
 };

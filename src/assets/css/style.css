@@ -8,11 +8,12 @@ p {
   color: #3e3e3e;
 }
 
-.container {
+.page-container {
   margin: 0 auto;
   width: 500px;
   text-align: center;
 }
+
 hr{
   margin: 30px;
 }
@@ -24,4 +25,30 @@ hr{
 .selected{
   border-bottom: 4px solid #2f8def;
   font-weight: 800;
+}
+
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.sidebar {
+  grid-area: sidebar;
+}
+.footer {
+  grid-area: footer;  
+  text-align: center;
+  vertical-align: bottom;
+  background: cadetblue;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 15px auto 15px;
+  grid-template-rows: 50px auto 70px;
+  grid-template-areas: 
+    "header header header"
+    "main main sidebar"
+    "footer footer footer";
 }

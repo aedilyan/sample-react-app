@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes'
 import authService from './api/authService'
-import Header from './components/header/Header'
 import ErrorBoundary from './components/common/ErrorBoundary'
+import Layout from './Layout'
 import "./assets/css/style.css"
 
 authService.init();
@@ -19,8 +19,9 @@ const App = () => {
       <UserContext.Provider value={[user, setUser]}>
         <ErrorBoundary>
           <BrowserRouter>
-            <Header />
-            <Routes />
+            <Layout>
+              <Routes />
+            </Layout>
           </BrowserRouter>
         </ErrorBoundary>
       </UserContext.Provider>

@@ -30,7 +30,7 @@ const HomePage = () => {
     }
 
     return (
-        <div className="container">
+        <div className="page-container main">
             <Heading message={`here are [${authUser.email}]'s followers`} />
             <hr></hr>
 
