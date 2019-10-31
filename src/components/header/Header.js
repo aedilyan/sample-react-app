@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 //import useLocalStorage from '../hooks/useLocalStorage'
 import { UserContext } from '../../App'
 import './header.css'
@@ -25,8 +25,8 @@ const Header = () => {
             </div>
 
             <div className="nav-links">
-                <Link to="/">Home</Link>
-                <Link to="/about">About</Link>
+                <NavLink exact to="/" activeClassName="selected">Home</NavLink>
+                <NavLink to="/about" activeClassName="selected">About</NavLink>
                 <input
                     type="text"
                     placeholder="Enter your name"

@@ -12,8 +12,15 @@ const Counter = () => {
             setCounter(c => c + 1);
         }, 1000);
 
+        const logOnClick = () => {
+            console.log('clicked on document');
+        }
+
+        window.addEventListener("click", logOnClick);
+
         return () => {
             window.clearInterval(intervalId);
+            window.removeEventListener("click", logOnClick);
             console.log('Counter component is unmounting', '#bada55');
         }
     }, []);

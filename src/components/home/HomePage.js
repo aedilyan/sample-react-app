@@ -1,4 +1,5 @@
 import React, { useCallback, useContext } from 'react'
+import { useHistory } from "react-router-dom"
 import Heading from '../common/heading/Heading'
 import Avatar from '../common/avatar/Avatar'
 import Button from '../common/button/Button'
@@ -6,8 +7,8 @@ import { HeartButton } from '../common/heartButton/HeartButton'
 import useAxiosFetch from '../../hooks/useAxiosFetch'
 import { UserContext } from '../../App'
 
-const HomePage = ({ history }) => {
-
+const HomePage = () => {
+    let history = useHistory();
     const { data, isLoading, updateDataRecord } = useAxiosFetch("https://reqres.in/api/users?page=1", []);
     const [authUser] = useContext(UserContext);
 
