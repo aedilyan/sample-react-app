@@ -10,7 +10,7 @@ const Input = ({ type = "text", name = "name", ...props }) => {
                 name={name}
                 {...props}
             />
-            {props.warning && <span className="error">{props.warning}</span>}
+            {(props.warning && !props.warning.valid) && <span className="error">{props.warning.message}</span>}
         </Fragment >
     );
 }
