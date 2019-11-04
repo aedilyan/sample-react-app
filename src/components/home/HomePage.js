@@ -1,11 +1,11 @@
 import React, { useCallback, useContext } from 'react'
 import { useHistory } from "react-router-dom"
-import Heading from '../common/heading/Heading'
-import Avatar from '../common/avatar/Avatar'
-import Button from '../common/button/Button'
-import { HeartButton } from '../common/heartButton/HeartButton'
-import useAxiosFetch from '../../hooks/useAxiosFetch'
-import { AuthContext } from '../../App'
+import Heading from 'Common/heading/Heading'
+import Avatar from 'Common/avatar/Avatar'
+import Button from 'Common/button/Button'
+import { HeartButton } from 'Common/heartButton/HeartButton'
+import useAxiosFetch from 'Hooks/useAxiosFetch'
+import { AuthContext } from 'Src/App'
 
 const HomePage = () => {
     let history = useHistory();

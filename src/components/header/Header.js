@@ -1,8 +1,8 @@
 import React, { useContext, useState, Fragment } from 'react'
 import { NavLink } from 'react-router-dom'
-import Input from '../common/input/Input'
-import Button from '../common/button/Button'
-import { AuthContext } from '../../App'
+import Input from 'Common/input/Input'
+import Button from 'Common/button/Button'
+import { AuthContext } from 'Src/App'
 import authAction from '../../actions/authAction'
 import './header.css'
 

@@ -65,5 +65,14 @@ module.exports = {
     new CopyWebpackPlugin([{ from: "public" }]),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
-  ]
+  ],
+  resolve: {
+    alias: {
+      Components: path.resolve(__dirname, 'src/components/'),
+      Common: path.resolve(__dirname, 'src/components/common/'),
+      Utils: path.resolve(__dirname, 'src/utils/'),
+      Hooks: path.resolve(__dirname, 'src/hooks/'),
+      Src: path.resolve(__dirname, 'src')
+    }
+  }
 };

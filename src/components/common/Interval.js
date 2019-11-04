@@ -1,6 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import Button from './button/Button'
-import { console, window } from '../../utils'
+import { console, window } from 'Utils'
 
 const Counter = () => {
     const [counter, setCounter] = useState(0);

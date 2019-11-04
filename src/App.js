@@ -3,8 +3,8 @@ import ReactDOM from "react-dom";
 import { BrowserRouter } from 'react-router-dom';
 import Routes from './Routes'
 import authService from './api/authService'
-import ErrorBoundary from './components/common/ErrorBoundary'
-import { window } from './utils'
+import ErrorBoundary from 'Components/common/ErrorBoundary'
+import { window } from 'Utils'
 import authReducer from './reducers/authReducer'
 import Layout from './Layout'
 import "./assets/css/style.css"

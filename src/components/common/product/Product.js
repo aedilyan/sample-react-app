@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react'
-import { console } from '../../../utils'
+import { console } from 'Utils'
 
 
 const EffectHook = ({ productId }) => {

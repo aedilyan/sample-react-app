@@ -1,9 +1,9 @@
 import React, { useState, lazy } from 'react'
-import Button from '../common/button/Button'
-import useWindowWidth from "../../hooks/useWindowWidth"
-const Interval = lazy(() => import('../common/Interval'));
-const Product = lazy(() => import('../common/product/Product'));
-const Counter = lazy(() => import('../common/counter/Counter'));
+import Button from 'Common/button/Button'
+import useWindowWidth from "Hooks/useWindowWidth"
+const Interval = lazy(() => import('Common/Interval'));
+const Product = lazy(() => import('Common/product/Product'));
+const Counter = lazy(() => import('Common/counter/Counter'));
 const LoginForm = lazy(() => import('./LoginForm'));
 
 
