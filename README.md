@@ -1,4 +1,7 @@
-[![Github All Releases](https://img.shields.io/github/downloads/aedilyan/simple-react-app/total.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/aedilyan/simple-react-app/blob/master/LICENCE)
+[![GitHub stars](https://img.shields.io/github/stars/aedilyan/simple-react-app.svg?style=flat-square)](https://github.com/aedilyan/simple-react-app/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/aedilyan/simple-react-app.svg?style=flat-square)](https://github.com/aedilyan/simple-react-app/network)
+[![Mentioned in Awesome React](https://awesome.re/mentioned-badge.svg)](https://github.com/enaqx/awesome-react)
 
 # simple-react-app
 
