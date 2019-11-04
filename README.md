@@ -1,5 +1,3 @@
-[![Github All Releases]
-
 # simple-react-app
 
 This is a React simple project with Express, Webpack. This project can then be used as a template for other more complex apps.
