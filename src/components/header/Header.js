@@ -1,13 +1,24 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState, Fragment } from 'react'
 import { NavLink } from 'react-router-dom'
-//import useLocalStorage from '../hooks/useLocalStorage'
-import { UserContext } from '../../App'
+import Input from '../common/input/Input'
+import Button from '../common/button/Button'
+import { AuthContext } from '../../App'
+import authAction from '../../actions/authAction'
 import './header.css'
 
 const Header = () => {
 
-    //const [name, setName] = useLocalStorage('name', 'Bob');
-    const [authUser, setAuthUser] = Array.isArray(useContext(UserContext)) ? useContext(UserContext) : [{}, function () { }]; // eslint-disable-line react-hooks/rules-of-hooks
+    const [authState, dispatch] = useContext(AuthContext);
+    const [email, setEmail] = useState('');
+
+    const handleLogin = () => {
+        !!email && dispatch({ type: authAction.signin, payload: { ...authState, user: { ...authState.user, email: email } } })
+    }
+
+    const handleLogout = () => {
+        dispatch({ type: authAction.signout })
+        setEmail('')
+    }
 
     return (
         <div className="nav header">
@@ -26,13 +37,22 @@ const Header = () => {
 
             <div className="nav-links">
                 <NavLink exact to="/" activeClassName="selected">Home</NavLink>
-                <NavLink to="/about" activeClassName="selected">About</NavLink>
-                <input
-                    type="text"
-                    placeholder="Enter your name"
-                    value={authUser.email}
-                    onChange={e => setAuthUser({ ...authUser, email: e.target.value })}
-                />
+                <NavLink to="/about" activeClassName="selected" className="vl">About</NavLink>
+                {!authState.isAuthenticated &&
+                    <Fragment>
+                        <Input
+                            type="text"
+                            placeholder="Enter your email"
+                            value={email}
+                            onChange={e => setEmail(e.target.value)}
+                        />
+                        <Button onClick={handleLogin}>Sign in</Button>
+                    </Fragment>}
+                {authState.isAuthenticated &&
+                    <Fragment>
+                        <span className="welcome">{`Wlcome, ${authState.user.email}`}</span>
+                        <Button onClick={handleLogout}>Sign out</Button>
+                    </Fragment>}
             </div>
         </div>
     );

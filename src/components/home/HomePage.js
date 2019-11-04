@@ -5,12 +5,12 @@ import Avatar from '../common/avatar/Avatar'
 import Button from '../common/button/Button'
 import { HeartButton } from '../common/heartButton/HeartButton'
 import useAxiosFetch from '../../hooks/useAxiosFetch'
-import { UserContext } from '../../App'
+import { AuthContext } from '../../App'
 
 const HomePage = () => {
     let history = useHistory();
     const { data, isLoading, updateDataRecord } = useAxiosFetch("https://reqres.in/api/users?page=1", []);
-    const [authUser] = useContext(UserContext);
+    const [authState] = useContext(AuthContext)
 
     const goProfile = (user) => {
         history.push(`/user/${user.id}`, { user });
@@ -31,7 +31,7 @@ const HomePage = () => {
 
     return (
         <div className="page-container main">
-            <Heading message={`here are [${authUser.email}]'s followers`} />
+            <Heading message={`here are [${authState.isAuthenticated ? authState.user.email : 'guest'}]'s followers`} />
             <hr></hr>
 
             {data.map((user) => (

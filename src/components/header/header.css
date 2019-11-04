@@ -88,5 +88,16 @@
     .nav > #nav-check:checked ~ .nav-links {
       height: calc(100vh - 50px);
       overflow-y: auto;
-    }
+    }    
+  }
+
+  .vl {
+    border-right: 6px solid gray;
+    height: 50px;
+    margin-right: 5px;
+  }
+
+  .welcome {
+    color: white;
+    padding-right: 6px;
   }
