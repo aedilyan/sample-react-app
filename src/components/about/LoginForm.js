@@ -1,7 +1,7 @@
 import React from 'react'
-import useInput from "../../hooks/useInput"
-import Input from '../common/input/Input'
-import { console } from '../../utils'
+import { useInput } from "Hooks"
+import { Input } from 'Components'
+import { console } from 'Utils'
 
 const LoginForm = () => {
     const { value: userName, bind: bindUserName, reset: resetUserName } = useInput('', 'username');

@@ -1,10 +1,12 @@
 import React, { useCallback, useContext } from 'react'
 import { useHistory } from "react-router-dom"
-import Heading from 'Common/heading/Heading'
-import Avatar from 'Common/avatar/Avatar'
-import Button from 'Common/button/Button'
-import { HeartButton } from 'Common/heartButton/HeartButton'
-import useAxiosFetch from 'Hooks/useAxiosFetch'
+import {
+    Heading,
+    Avatar,
+    Button,
+    HeartButton
+} from 'Components'
+import { useAxiosFetch } from 'Hooks'
 import { AuthContext } from 'Src/App'
 
 const HomePage = () => {

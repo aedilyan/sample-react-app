@@ -1,17 +1,19 @@
 import React, { useState, lazy } from 'react'
-import Button from 'Common/button/Button'
-import useWindowWidth from "Hooks/useWindowWidth"
-const Interval = lazy(() => import('Common/Interval'));
-const Product = lazy(() => import('Common/product/Product'));
-const Counter = lazy(() => import('Common/counter/Counter'));
-const LoginForm = lazy(() => import('./LoginForm'));
+
+import { useWindowWidth } from "Hooks"
+const LoginForm = lazy(() => import('./LoginForm'))
+import {
+    Product,
+    Interval,
+    Button,
+    Counter
+} from 'Components'
 
 
 const About = () => {
     const [isCounting, setIsCounting] = useState(false);
     const [productId, setProductId] = useState(0);
     const width = useWindowWidth();
-
 
     return (
         <div className="page-container main">
