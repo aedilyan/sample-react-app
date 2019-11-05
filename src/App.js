@@ -10,7 +10,7 @@ import Layout from './Layout'
 import "./assets/css/style.css"
 
 authService.init();
-export const AuthContext = React.createContext();
+export const AuthContext = React.createContext([{}, function(){}]);
 
 
 const App = () => {
