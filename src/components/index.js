@@ -15,6 +15,9 @@ export { Interval }
 const Counter = lazy(() => import('Common/counter/Counter'))
 export { Counter }
 
+const Counter2 = lazy(() => import('Common/counter/Counter2'))
+export { Counter2 }
+
 const Input = lazy(() => import('Common/input/Input'))
 export { Input }
 

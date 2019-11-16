@@ -6,7 +6,8 @@ import {
     Product,
     Interval,
     Button,
-    Counter
+    Counter,
+    Counter2
 } from 'Components'
 
 
@@ -27,6 +28,9 @@ const About = () => {
             <hr></hr>
 
             <Counter />
+            <hr></hr>
+
+            <Counter2 />
             <hr></hr>
 
             <p>Window width is {width}</p>
