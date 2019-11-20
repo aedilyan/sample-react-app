@@ -7,9 +7,11 @@ import {
     Interval,
     Button,
     Counter,
-    Counter2
+    Counter2,
+    Heading
 } from 'Components'
 
+const message = "please login to track your order";
 
 const About = () => {
     const [isCounting, setIsCounting] = useState(false);
@@ -36,8 +38,9 @@ const About = () => {
             <p>Window width is {width}</p>
             <hr></hr>
 
-            <h4>Enter username and password to Login</h4>
-            <LoginForm />
+            <LoginForm>
+                <Heading message={message} />
+            </LoginForm>
         </div>
     );
 };

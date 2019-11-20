@@ -15,7 +15,7 @@ const useInput = (initialValue, fieldName) => {
 
     const reset = useCallback(() => {
         setWarning(validate(fieldName, ""));
-        setValue("")
+        setValue("");
     }, [setValue, setWarning, fieldName])
 
     return {
