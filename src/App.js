@@ -31,6 +31,7 @@ const App = () => {
               <Routes />
             </Layout>
           </BrowserRouter>
+          <div id="modal-root"></div>
         </ErrorBoundary>
       </AuthContext.Provider>
     </React.StrictMode>

@@ -21,3 +21,6 @@ export { Counter2 }
 const Input = lazy(() => import('Common/input/Input'))
 export { Input }
 
+export { GoogleTranslate } from 'Common/GoogleTranslate/GoogleTranslate'
+
+export { Modal } from 'Common/Modal/Modal'
