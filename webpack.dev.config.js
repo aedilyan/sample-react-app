@@ -72,7 +72,8 @@ module.exports = {
       Common: path.resolve(__dirname, 'src/components/common/'),
       Utils: path.resolve(__dirname, 'src/utils/'),
       Hooks: path.resolve(__dirname, 'src/hooks/'),
-      Src: path.resolve(__dirname, 'src')
+      Src: path.resolve(__dirname, 'src'),
+      Context: path.resolve(__dirname, 'src/Context/'),
     }
   }
 };

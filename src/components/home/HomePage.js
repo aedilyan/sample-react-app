@@ -7,7 +7,7 @@ import {
     HeartButton
 } from 'Components'
 import { useAxiosFetch } from 'Hooks'
-import { AuthContext } from 'Src/App'
+import { AuthContext } from 'Context/AuthContext'
 
 const HomePage = () => {
     let history = useHistory();
