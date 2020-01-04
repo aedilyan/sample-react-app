@@ -8,7 +8,7 @@ import './header.css'
 
 const Header = () => {
 
-    const [authState, dispatch] = useContext(AuthContext);
+    const { state: authState, dispatch } = useContext(AuthContext);
     const [email, setEmail] = useState('');
 
     const handleLogin = () => {

@@ -12,7 +12,7 @@ import { AuthContext } from 'Context/AuthContext'
 const HomePage = () => {
     let history = useHistory();
     const { data, isLoading, updateDataRecord } = useAxiosFetch("https://reqres.in/api/users?page=1", []);
-    const [authState] = useContext(AuthContext)
+    const { state: authState } = useContext(AuthContext)
 
     const goProfile = (user) => {
         history.push(`/user/${user.id}`, { user });
